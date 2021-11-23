@@ -6,7 +6,7 @@
 /*   By: ytomiyos <ytomiyos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 19:55:18 by ytomiyos          #+#    #+#             */
-/*   Updated: 2021/11/23 15:47:58 by ytomiyos         ###   ########.fr       */
+/*   Updated: 2021/11/23 16:12:51 by ytomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,12 +74,8 @@ Array<T> &Array<T>::operator=(Array const &copy)
 template <typename T>
 T &Array<T>::operator[](unsigned int n)
 {
-	try {
-		if (n >= this->_size)
-			throw std::out_of_range("index out of range");
-	} catch (std::exception &e) {
-		std::cout << "Error: " << e.what() << std::endl;
-	}
+	if (n >= this->_size)
+		throw std::out_of_range("index out of range");
 	return (this->_array[n]);
 }
 
