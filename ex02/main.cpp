@@ -6,7 +6,7 @@
 /*   By: ytomiyos <ytomiyos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 19:55:15 by ytomiyos          #+#    #+#             */
-/*   Updated: 2021/11/22 23:19:00 by ytomiyos         ###   ########.fr       */
+/*   Updated: 2021/11/23 15:50:11 by ytomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,39 @@ void test_string()
 	std::cout << "size: " << a.size() << std::endl;
 	for (int i = 0; i < 5; i++)
 		std::cout << a[i] << std::endl;
+
+	Array<std::string> b(3);
+	b = a;
+	std::cout << "size: " << b.size() << std::endl;
+	for (int i = 0; i < 5; i++)
+		std::cout << b[i] << std::endl;
+}
+
+class Awesome {
+	private:
+		int _n;
+	public:
+		Awesome() : _n(0) {}
+		Awesome(int n) : _n(n) { return; }
+		int get() const { return this->_n; }
+};
+void test_class()
+{
+	std::cout << "==============test_class==============" << std::endl;
+	Array<Awesome> a(3);
+	Awesome ary[] = {Awesome(1), Awesome(2), Awesome(3)};
+	for (int i = 0; i < 3; i++)
+		a[i] = ary[i];
+
+	std::cout << "size: " << a.size() << std::endl;
+	for (int i = 0; i < 3; i++)
+		std::cout << a[i].get() << std::endl;
+
+	Array<Awesome> b(3);
+	b = a;
+	std::cout << "size: " << b.size() << std::endl;
+	for (int i = 0; i < 3; i++)
+		std::cout << b[i].get() << std::endl;
 }
 
 void test_error()
@@ -78,6 +111,7 @@ int main()
 	test_char();
 	test_float();
 	test_string();
+	test_class();
 	test_error();
 
 	return (0);

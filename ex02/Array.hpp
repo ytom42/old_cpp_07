@@ -6,7 +6,7 @@
 /*   By: ytomiyos <ytomiyos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 19:55:18 by ytomiyos          #+#    #+#             */
-/*   Updated: 2021/11/22 23:18:39 by ytomiyos         ###   ########.fr       */
+/*   Updated: 2021/11/23 15:47:58 by ytomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,10 @@ Array<T>::~Array(void)
 template <typename T>
 Array<T> &Array<T>::operator=(Array const &copy)
 {
+	T *tmp;
+	tmp = new T[copy._size];
 	delete [] this->_array;
-	this->_array = new T[copy._size];
+	this->_array = tmp;
 	this->_size = copy._size;
 	for (unsigned int i = 0; i < copy._size; i++)
 		this->_array[i] = copy._array[i];

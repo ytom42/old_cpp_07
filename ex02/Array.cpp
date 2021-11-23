@@ -6,7 +6,7 @@
 /*   By: ytomiyos <ytomiyos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 20:02:47 by ytomiyos          #+#    #+#             */
-/*   Updated: 2021/11/22 22:34:37 by ytomiyos         ###   ########.fr       */
+/*   Updated: 2021/11/23 15:30:18 by ytomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Array<T>::Array(void)
 template <typename T>
 Array<T>::Array(unsigned int n)
 {
-	this->_array = new T[n];
+	this->_array = new T[n]();
 	this->_size = n;
 }
 
