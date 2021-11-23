@@ -6,13 +6,48 @@
 /*   By: ytomiyos <ytomiyos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 18:06:07 by ytomiyos          #+#    #+#             */
-/*   Updated: 2021/11/22 19:51:20 by ytomiyos         ###   ########.fr       */
+/*   Updated: 2021/11/23 14:53:24 by ytomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
+#include <ostream>
 #include "whatever.hpp"
+
+/*
+class Awesome
+{
+	private:
+		int _n;
+	public:
+		Awesome(int n) : _n(n) {}
+		bool operator==(Awesome const &rhs) const { return (this->_n == rhs._n); }
+		bool operator!=(Awesome const &rhs) const { return (this->_n != rhs._n); }
+		bool operator>(Awesome const &rhs) const { return (this->_n > rhs._n); }
+		bool operator<(Awesome const &rhs) const { return (this->_n < rhs._n); }
+		bool operator>=(Awesome const &rhs) const { return (this->_n >= rhs._n); }
+		bool operator<=(Awesome const &rhs) const { return (this->_n <= rhs._n); }
+		int getn(void) const { return _n; }
+};
+
+std::ostream& operator<<(std::ostream &stream, const Awesome &value)
+{
+	return stream << value.getn();
+}
+
+void test_reveiw()
+{
+	std::cout << "======test_review======" << std::endl;
+	Awesome a(1);
+	Awesome b(2);
+	std::cout << "a:" << a << "  b:" << b << std::endl;
+	swap(a, b);
+	std::cout << "swap( a, b ) => " << "( " << a << ", " << b << " )" << std::endl;
+	std::cout << "min( a, b ) = " << min(a, b) << std::endl;
+	std::cout << "max( a, b ) = " << max(a, b) << std::endl;
+}
+*/
 
 void test_int()
 {
@@ -20,17 +55,17 @@ void test_int()
 	int a = 2;
 	int b = 3;
 	std::cout << "a = " << a << ", b = " << b << std::endl;
-	::swap( a, b );
+	::swap(a, b);
 	std::cout << "swap( a, b )" << std::endl;
-	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
-	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+	std::cout << "min( a, b ) = " << ::min(a, b) << std::endl;
+	std::cout << "max( a, b ) = " << ::max(a, b) << std::endl;
 
-	std::cout << "min( 1, 2 ) = " << ::min( 1, 2 ) << std::endl;
-	std::cout << "max( 1, 2 ) = " << ::max( 1, 2 ) << std::endl;
-	std::cout << "min( 4200, -4200 ) = " << ::min( 4200, -4200 ) << std::endl;
-	std::cout << "max( 4200, -4200 ) = " << ::max( 4200, -4200 ) << std::endl;
-	std::cout << "min( -1, -1 ) = " << ::min( -1, -1 ) << std::endl;
-	std::cout << "max( -1, -1 ) = " << ::max( -1, -1 ) << std::endl;
+	std::cout << "min( 1, 2 ) = " << ::min(1, 2) << std::endl;
+	std::cout << "max( 1, 2 ) = " << ::max(1, 2) << std::endl;
+	std::cout << "min( 4200, -4200 ) = " << ::min(4200, -4200) << std::endl;
+	std::cout << "max( 4200, -4200 ) = " << ::max(4200, -4200) << std::endl;
+	std::cout << "min( -1, -1 ) = " << ::min(-1, -1) << std::endl;
+	std::cout << "max( -1, -1 ) = " << ::max(-1, -1) << std::endl;
 }
 
 void test_char()
@@ -39,15 +74,15 @@ void test_char()
 	char a = 'a';
 	char b = 'b';
 	std::cout << "a = " << a << ", b = " << b << std::endl;
-	::swap( a, b );
+	::swap(a, b);
 	std::cout << "swap ( a, b )" << std::endl;
-	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
-	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+	std::cout << "min( a, b ) = " << ::min(a, b) << std::endl;
+	std::cout << "max( a, b ) = " << ::max(a, b) << std::endl;
 
-	std::cout << "min( '4', '2' ) = " << ::min( '4', '2' ) << std::endl;
-	std::cout << "max( '4', '2' ) = " << ::max( '4', '2' ) << std::endl;
-	std::cout << "min( 'z', 'z' ) = " << ::min( 'z', 'z' ) << std::endl;
-	std::cout << "max( 'z', 'z' ) = " << ::max( 'z', 'z' ) << std::endl;
+	std::cout << "min( '4', '2' ) = " << ::min('4', '2') << std::endl;
+	std::cout << "max( '4', '2' ) = " << ::max('4', '2') << std::endl;
+	std::cout << "min( 'z', 'z' ) = " << ::min('z', 'z') << std::endl;
+	std::cout << "max( 'z', 'z' ) = " << ::max('z', 'z') << std::endl;
 }
 
 void test_float()
@@ -56,17 +91,17 @@ void test_float()
 	float a = 2.0;
 	float b = 3.0;
 	std::cout << "a = " << a << ", b = " << b << std::endl;
-	::swap( a, b );
+	::swap(a, b);
 	std::cout << "swap ( a, b )" << std::endl;
-	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
-	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+	std::cout << "min( a, b ) = " << ::min(a, b) << std::endl;
+	std::cout << "max( a, b ) = " << ::max(a, b) << std::endl;
 
-	std::cout << "min( 1.0, 2.0 ) = " << ::min( 1.0, 2.0 ) << std::endl;
-	std::cout << "max( 1.0, 2.0 ) = " << ::max( 1.0, 2.0 ) << std::endl;
-	std::cout << "min( 42.0, -42.0 ) = " << ::min( 42.0, -42.0 ) << std::endl;
-	std::cout << "max( 42.0, -42.0 ) = " << ::max( 42.0, -42.0 ) << std::endl;
-	std::cout << "min( 5.5, 5.5 ) = " << ::min( 5.5, 5.5 ) << std::endl;
-	std::cout << "max( 5.5, 5.5 ) = " << ::max( 5.5, 5.5 ) << std::endl;
+	std::cout << "min( 1.0, 2.0 ) = " << ::min(1.0, 2.0) << std::endl;
+	std::cout << "max( 1.0, 2.0 ) = " << ::max(1.0, 2.0) << std::endl;
+	std::cout << "min( 42.0, -42.0 ) = " << ::min(42.0, -42.0) << std::endl;
+	std::cout << "max( 42.0, -42.0 ) = " << ::max(42.0, -42.0) << std::endl;
+	std::cout << "min( 5.5, 5.5 ) = " << ::min(5.5, 5.5) << std::endl;
+	std::cout << "max( 5.5, 5.5 ) = " << ::max(5.5, 5.5) << std::endl;
 }
 
 void test_string()
@@ -77,13 +112,13 @@ void test_string()
 	std::cout << "a = " << a << ", b = " << b << std::endl;
 	::swap(a, b);
 	std::cout << "swap ( a, b )" << std::endl;
-	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
-	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+	std::cout << "min( a, b ) = " << ::min(a, b) << std::endl;
+	std::cout << "max( a, b ) = " << ::max(a, b) << std::endl;
 
-	std::cout << "min( abcdef, ghijkl ) = " << ::min( "abcdef", "ghijkl" ) << std::endl;
-	std::cout << "max( abcdef, ghijkl ) = " << ::max( "abcdef", "ghijkl" ) << std::endl;
-	std::cout << "min( 42, 42 ) = " << ::min( "42", "42" ) << std::endl;
-	std::cout << "max( 42, 42 ) = " << ::max( "42", "42" ) << std::endl;
+	std::cout << "min( abcdef, ghijkl ) = " << ::min("abcdef", "ghijkl") << std::endl;
+	std::cout << "max( abcdef, ghijkl ) = " << ::max("abcdef", "ghijkl") << std::endl;
+	std::cout << "min( 42, 42 ) = " << ::min("42", "42") << std::endl;
+	std::cout << "max( 42, 42 ) = " << ::max("42", "42") << std::endl;
 }
 
 int main()
@@ -92,6 +127,8 @@ int main()
 	test_char();
 	test_float();
 	test_string();
+
+	// test_reveiw();
 
 	return (0);
 }
